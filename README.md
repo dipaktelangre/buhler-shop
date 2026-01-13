@@ -2,6 +2,22 @@
 
 A modern e-commerce application showcasing Bühler's industrial machinery products. Built with Vue 3 and featuring a clean, responsive design with real-time shopping cart functionality.
 
+**Live Demo:** [https://buhler-shop.vercel.app/](https://buhler-shop.vercel.app/)
+
+## Screenshots
+
+### Product Listing Page
+![Product Listing](docs/screenshots/product-listing.png)
+*Browse products organized by categories with clean card layouts*
+
+### Product Detail Page  
+![Product Detail](docs/screenshots/product-detail.png)
+*Detailed product view with add to cart functionality*
+
+### Shopping Cart
+![Shopping Cart](docs/screenshots/shopping-cart.png)
+*Real-time cart management with item removal and totals*
+
 ## Technologies Used
 
 - **Vue 3** - Progressive JavaScript framework with Composition API
@@ -13,6 +29,7 @@ A modern e-commerce application showcasing Bühler's industrial machinery produc
 - **Axios** - HTTP client for API requests
 - **Font Awesome** - Icon library
 - **SCSS** - CSS preprocessor
+- **Vercel** - Deployment 
 
 ## Prerequisites
 
