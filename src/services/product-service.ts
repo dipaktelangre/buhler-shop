@@ -34,7 +34,10 @@ export const productService = {
   // Get product by ID
   async getProductById(id: string): Promise<Product | null> {
     const products = await this.getAllProducts()
-    return products.find(p => p.id === id) || null
+    console.log(`Searching for product with ID: ${id}`)
+    const product = products.find(p => p.id === id) || null
+    console.log('Found product:', product, products)
+    return product
   },
 
   // Group products by category

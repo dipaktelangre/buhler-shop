@@ -18,7 +18,8 @@
           <div 
             v-for="product in section.products" 
             :key="product.id" 
-            class="bg-white border rounded-lg overflow-hidden hover:shadow-md transition-shadow bg-gray-50"
+            class="bg-white border rounded-lg overflow-hidden hover:shadow-md transition-shadow bg-gray-50 cursor-pointer"
+            @click="viewProduct(product.id)"
           >
             <div class="p-4">
                 <img 
@@ -38,7 +39,7 @@
               </div>
               
               <button 
-                @click="addToCart(product)"
+                @click.stop="addToCart(product)"
                 class="buhler-text w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors"
                 :title="`Add ${product.name} to cart`"
               >
@@ -54,9 +55,11 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { productService } from '../services'
-import type { ProductSection, Product } from '../types'
+import { useRouter } from 'vue-router'
+import { productService } from '../services/product-service'
+import type { ProductSection, Product } from '../types/product'
 
+const router = useRouter()
 const sections = ref<ProductSection[]>([])
 const loading = ref(true)
 const error = ref('')
@@ -64,6 +67,10 @@ const error = ref('')
 const addToCart = (product: Product) => {
   console.log('Adding to cart:', product.name)
   // TODO: Implement cart functionality
+}
+
+const viewProduct = (productId: string) => {
+  router.push(`/product/${productId}`)
 }
 
 onMounted(async () => {

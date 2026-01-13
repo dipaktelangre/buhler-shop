@@ -37,9 +37,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
 
 // Reactive data for current date and time
 const currentDateTime = ref('')
