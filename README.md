@@ -11,7 +11,7 @@ A modern e-commerce application showcasing Bühler's industrial machinery produc
 *Browse products organized by categories with clean card layouts*
 
 ### Product Detail Page  
-![Product Detail](docs/screenshots/product-detail.png)
+![Product Detail](docs/screenshots/product-details.png)
 *Detailed product view with add to cart functionality*
 
 ### Shopping Cart
