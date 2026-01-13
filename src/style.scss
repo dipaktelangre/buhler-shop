@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Simple SCSS variables for testing */
+$primary-color: #3b82f6;
+$secondary-color: #8b5cf6;
+
+/* Root styles */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Simple custom button for testing SCSS + Tailwind */
+.btn-primary {
+  @apply px-4 py-2 rounded-md font-medium transition-colors;
+  background-color: $primary-color;
+  color: white;
+  
+  &:hover {
+    @apply bg-blue-600;
+  }
+}
