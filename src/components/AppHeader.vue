@@ -24,8 +24,9 @@
         <div class="flex items-center">
           <router-link
             to="/checkout"
-            class="flex items-center space-x-2 px-3 py-2 transition-colors duration-200 buhler-text"
+            class="flex items-center space-x-2 px-3 py-2 transition-colors duration-200 buhler-text hover:opacity-80"
           >
+            <i class="fa-solid fa-cart-shopping" style="transform: scaleX(-1);"></i>
             <span class="text-sm font-medium">Cart ({{ cartItemCount }})</span>
           </router-link>
         </div>
