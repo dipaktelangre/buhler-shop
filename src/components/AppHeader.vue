@@ -80,3 +80,9 @@ onUnmounted(() => {
   }
 })
 </script>
+
+<script lang="ts">
+export default {
+  name: 'AppHeader'
+}
+</script>
