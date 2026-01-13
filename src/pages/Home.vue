@@ -1,30 +1,27 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import HelloWorld from '../components/HelloWorld.vue'
 
 export default defineComponent({
-  components: {
-    HelloWorld
-  }
+  name: 'Home'
 })
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-    <div class="container mx-auto px-4 py-8">
-      <HelloWorld msg="Home Page - Tailwind CSS + SCSS Testing" />
+  <div class="container mx-auto px-4 py-8">
+    <div class="text-center">
+      <h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome to Bühler Shop</h1>
+      <p class="text-lg text-gray-600 mb-8">Your premium online store for Bühler products</p>
       
-      <div class="mt-8 text-center">
-        <router-link 
-          to="/about" 
-          class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors inline-block"
-        >
-          Go to About Page
-        </router-link>
+      <!-- Product list will be implemented here -->
+      <div class="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-12">
+        <p class="text-gray-500">Product list coming soon...</p>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+</style>
 
 <style scoped>
 </style>
