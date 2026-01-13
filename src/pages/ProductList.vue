@@ -57,16 +57,18 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { productService } from '../services/product-service'
+import { useCartStore } from '../stores/cart'
 import type { ProductSection, Product } from '../types/product'
 
 const router = useRouter()
+const cartStore = useCartStore()
 const sections = ref<ProductSection[]>([])
 const loading = ref(true)
 const error = ref('')
 
 const addToCart = (product: Product) => {
-  console.log('Adding to cart:', product.name)
-  // TODO: Implement cart functionality
+  cartStore.addToCart(product)
+  console.log('Added to cart:', product.name)
 }
 
 const viewProduct = (productId: string) => {

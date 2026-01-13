@@ -36,13 +36,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useCartStore } from '../stores/cart'
+
+const cartStore = useCartStore()
 
 // Reactive data for current date and time
 const currentDateTime = ref('')
 
-// Placeholder for cart item count - will be connected to cart store later
-const cartItemCount = ref(0)
+// Get cart item count from store - maintain reactivity
+const cartItemCount = computed(() => cartStore.totalItems)
 
 // Update date and time
 const updateDateTime = () => {

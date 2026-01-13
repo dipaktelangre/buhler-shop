@@ -80,10 +80,12 @@
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { productService } from '../services/product-service'
+import { useCartStore } from '../stores/cart'
 import type { Product } from '../types/product'
 
 const route = useRoute()
 const router = useRouter()
+const cartStore = useCartStore()
 
 // Component state
 const product = ref<Product | null>(null)
@@ -106,10 +108,12 @@ const goBack = () => {
   router.push('/products')
 }
 
-// Add product to cart (simple implementation)
+// Add product to cart using Pinia store
 const addToCart = () => {
   if (!product.value) return
-  console.log(`Adding ${product.value.name} to cart`)  
+  
+  cartStore.addToCart(product.value)
+  console.log(`Added ${product.value.name} to cart`)
 }
 
 // Load product details
