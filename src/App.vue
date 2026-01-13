@@ -1,12 +1,14 @@
 <script lang="ts">
 import { defineComponent, onMounted } from 'vue'
 import AppHeader from './components/AppHeader.vue'
+import NotificationContainer from './components/NotificationContainer.vue'
 import { productService } from './services'
 
 export default defineComponent({
   name: 'App',
   components: {
-    AppHeader
+    AppHeader,
+    NotificationContainer
   },
   setup() {
     onMounted(async () => {
@@ -34,6 +36,9 @@ export default defineComponent({
     <main>
       <router-view />
     </main>
+
+    <!-- Notification Container -->
+    <NotificationContainer />
   </div>
 </template>
 

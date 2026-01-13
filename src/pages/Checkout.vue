@@ -104,7 +104,10 @@
 
 <script setup lang="ts">
 import { useCartStore } from '../stores/cart'
+import { useNotificationStore } from '../stores/notification'
+
 const cartStore = useCartStore()
+const notificationStore = useNotificationStore()
 
 // Format category for display
 const formatCategory = (category: string): string => {
@@ -116,12 +119,16 @@ const formatCategory = (category: string): string => {
 
 // Remove item from cart
 const removeItem = (productId: string) => {
+  const item = cartStore.items.find(i => i.id === productId);
+  const productName = item?.name || 'Product'
+  
   cartStore.removeFromCart(productId)
+  notificationStore.addNotification(`Removed "${productName}" from cart`, 'info');
 }
 
 // Proceed to checkout (placeholder)
 const proceedToCheckout = () => {
-  alert('Checkout functionality coming soon!')
+  notificationStore.addNotification("Checkout functionality coming soon!", 'info');
 }
 </script>
 

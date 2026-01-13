@@ -22,7 +22,12 @@ export const useCartStore = defineStore('cart', () => {
   }
 
   const removeFromCart = (productId: string) => {
-    items.value = items.value.filter(item => item.id !== productId);
+    // Remove first occurrence of the product with the given ID
+    // Duplicated product should not removed at once
+    const index = items.value.findIndex(item => item.id === productId);
+    if (index !== -1) {
+      items.value.splice(index, 1);
+    }
   }
   
 

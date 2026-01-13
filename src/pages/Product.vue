@@ -81,11 +81,13 @@ import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { productService } from '../services/product-service'
 import { useCartStore } from '../stores/cart'
+import { useNotificationStore } from '../stores/notification'
 import type { Product } from '../types/product'
 
 const route = useRoute()
 const router = useRouter()
 const cartStore = useCartStore()
+const notificationStore = useNotificationStore()
 
 // Component state
 const product = ref<Product | null>(null)
@@ -113,6 +115,7 @@ const addToCart = () => {
   if (!product.value) return
   
   cartStore.addToCart(product.value)
+  notificationStore.addNotification(`Added "${product.value.name}" to cart!`, 'success')
   console.log(`Added ${product.value.name} to cart`)
 }
 
