@@ -72,7 +72,7 @@ const addToCart = (product: Product) => {
 }
 
 const viewProduct = (productId: string) => {
-  router.push(`/product/${productId}`)
+  router.push(`/products/${productId}`)
 }
 
 onMounted(async () => {

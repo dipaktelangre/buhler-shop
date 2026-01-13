@@ -38,12 +38,17 @@
 
               <!-- Product Details -->
               <div class="flex-1 min-w-0">
-                <h3 class="buhler-text text-lg font-medium text-gray-900 truncate">
-                  {{ product.name }}
-                </h3>
-                <p class="buhler-text text-sm text-gray-500 mt-1">
-                  Category: {{ formatCategory(product.category) }}
-                </p>                
+                <router-link 
+                    :to="`/products/${product.id}`"                     
+                >
+                    <h3 class="buhler-text text-lg font-medium text-gray-900 truncate">
+                    {{ product.name }}
+                    </h3>
+                    <p class="buhler-text text-sm text-gray-500 mt-1">
+                    Category: {{ formatCategory(product.category) }}
+                    </p>  
+                </router-link>
+                              
               </div>
 
               <!-- Item Total -->
