@@ -32,7 +32,7 @@
             
             <div class="p-4 flex items-center justify-between bg-gray-200">
               <div>
-                <h3 class="font-medium mb-1">{{ product.name }}</h3>
+                <h3 class="font-medium mb-1 buhler-text">{{ product.name }}</h3>
                 <p class="text-lg font-bold buhler-text">
                   x{{ product.price.toFixed(2) }}
                 </p>
