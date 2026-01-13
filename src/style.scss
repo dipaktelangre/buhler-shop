@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables for Bühler branding */
+:root {
+  --buhler-brand-color: #009b91;
+}
+
 /* Global Bühler branding styles */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
@@ -14,8 +19,12 @@ body {
 }
 
 .buhler-text {
-  color: #009b91;
+  color: var(--buhler-brand-color);
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.buhler-border {
+  border-color: var(--buhler-brand-color);
 }
 
 /* Global full-width layout */

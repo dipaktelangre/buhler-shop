@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-white shadow-sm border-b border-gray-200">
+  <header class="bg-white shadow-sm border-b buhler-border">
     <div class="w-full px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Bühler Logo -->
@@ -15,7 +15,7 @@
 
         <!-- Current Date and Time -->
         <div class="hidden md:flex items-center">
-          <div class="text-sm font-medium buhler-text">
+          <div class="text-base font-medium buhler-text">
             {{ currentDateTime }}
           </div>
         </div>
@@ -26,8 +26,8 @@
             to="/checkout"
             class="flex items-center space-x-2 px-3 py-2 transition-colors duration-200 buhler-text hover:opacity-80"
           >
-            <i class="fa-solid fa-cart-shopping" style="transform: scaleX(-1);"></i>
-            <span class="text-sm font-medium">Cart ({{ cartItemCount }})</span>
+            <i class="fa-solid fa-cart-shopping text-lg" style="transform: scaleX(-1);"></i>
+            <span class="text-base font-medium">Cart ({{ cartItemCount }})</span>
           </router-link>
         </div>
       </div>
